@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      *{
+        margin:0;
+        padding:0;
+      }
+      .box{
+        width:500px;
+        height:50px;
+        margin:0 auto;
+        margin-top:5%;
+      }
+    </style>
+    <script src="./js/jquery1.8.0.min.js"></script>
+  </head>
+  <body>
+    <div class="box">
+      <h1><span>啊</span><span>哦</span><span>~</span><span>你</span><span>要</span><span>的</span><span>页</span><span>面</span><span>去</span><span>火</span><span>星</span><span>啦</span><span>~</span><span>~</span></h1>
+    </div>
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    function rand(min,max){
+       return parseInt(Math.random()*(max-min)+min);
+    }
+    function color(){
+      return 'rgb('+rand(0,256)+','+rand(0,256)+','+rand(0,256)+')';
+    }
+    function hello(){
+     for(var i=0;i<$('span').length;i++){
+       $('span')[i].style.color=color();
+     }
+   }
+   hello();
+   setInterval(hello,1000);
+    });
+  </script>
+</html>
